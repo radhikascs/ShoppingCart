@@ -1,4 +1,4 @@
-# ShoppingCart
+# Shopping Cart
 Shopping Cart in Angular JS
 
 #Installation
