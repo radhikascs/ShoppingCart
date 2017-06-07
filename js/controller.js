@@ -1,9 +1,11 @@
 ﻿'use strict';
 
-// the storeController contains two objects:
-// - store: contains the product list
-// - cart: the shopping cart object
-//@Author- Radhika Subramanian
+/**
+ * The store controller contains two objects
+ * 1. store: contains the product list
+ * 2. cart: contains the shopping cart object
+ * @Author- Radhika Subramanian
+ */
 function storeController($scope, $routeParams, DataService) {
 
     // get store and cart from service
