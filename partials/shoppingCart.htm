@@ -25,7 +25,6 @@
                         Your cart is empty.
                     </td>
                 </tr>
-
                 <!-- cart items -->
                 <tr ng-repeat="item in cart.items | orderBy:'name'">
                     <td>{{item.name}}</td>
@@ -53,7 +52,6 @@
                         </a>
                     </td>
                 </tr>
-
                 <!-- footer -->
                 <tr class="well">
                     <td><b>Total</b></td>
@@ -63,7 +61,6 @@
                 </tr>
             </table>
         </div>
-
         <!-- buttons -->
         <div class="span4">
             <p class="text-info">
@@ -79,9 +76,7 @@
                     <i class="icon-trash icon-white" /> clear cart
                 </button>
             </p>
-
             <br /><br />
-
             <p class="text-info">
                 <button
                     class="btn btn-block btn-primary"
