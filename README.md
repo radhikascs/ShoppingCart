@@ -1,3 +1,4 @@
+# Author- Radhika Subramanian
 # Shopping Cart
 Shopping Cart in Angular JS
 
