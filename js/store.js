@@ -8,7 +8,7 @@
 // 2: 10-20% DV
 // 3: 20-40% DV
 // 4: above 40% DV
-//
+// Author- Radhika Subramanian
 function store() {
     this.products = [
         // the list of products

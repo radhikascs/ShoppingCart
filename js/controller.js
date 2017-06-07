@@ -3,6 +3,7 @@
 // the storeController contains two objects:
 // - store: contains the product list
 // - cart: the shopping cart object
+//@Author- Radhika Subramanian
 function storeController($scope, $routeParams, DataService) {
 
     // get store and cart from service

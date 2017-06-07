@@ -1,6 +1,6 @@
 ﻿//----------------------------------------------------------------
 // shopping cart
-//
+// Author- Radhika Subramanian
 function shoppingCart(cartName) {
     this.cartName = cartName;
     this.clearCart = false;
