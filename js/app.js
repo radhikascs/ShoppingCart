@@ -44,7 +44,7 @@ storeApp.factory("DataService", function () {
     // shopping cart with PayPal, you have to create a merchant account with 
     // PayPal. You can do that here:
     // https://www.paypal.com/webapps/mpp/merchant
-    myCart.addCheckoutParameters("PayPal", "subramanian.radhika193@gmail.com");
+    myCart.addCheckoutParameters("PayPal", "radhika.omkard@gmail.com");
 
     // enable Google Wallet checkout
     // note: the second parameter identifies the merchant; in order to use the 
