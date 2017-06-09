@@ -35,7 +35,7 @@ var storeApp = angular.module('AngularStore', []).
         controllerAs: 'vm'
       }).     
       otherwise({
-        redirectTo: '/store'
+        redirectTo: '/login'
       });
 }]);
 
