@@ -24,10 +24,38 @@ var storeApp = angular.module('AngularStore', []).
         templateUrl: 'partials/shoppingCart.htm',
         controller: storeController
       }).
+       when('/login', {
+        templateUrl: 'partials/login.html',
+        controller: storeController,
+        controllerAs: 'vm'
+      }).
+      when('/register', {
+        templateUrl: 'partials/register.html',
+        controller: storeController,
+        controllerAs: 'vm'
+      }).     
       otherwise({
         redirectTo: '/store'
       });
 }]);
+
+    run.$inject = ['$rootScope', '$location', '$cookies', '$http'];
+    function run($rootScope, $location, $cookies, $http) {
+        // keep user logged in after page refresh
+        $rootScope.globals = $cookies.getObject('globals') || {};
+        if ($rootScope.globals.currentUser) {
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
+        }
+
+        $rootScope.$on('$locationChangeStart', function (event, next, current) {
+            // redirect to login page if not logged in and trying to access a restricted page
+            var restrictedPage = $.inArray($location.path(), ['/login', '/register']) === -1;
+            var loggedIn = $rootScope.globals.currentUser;
+            if (restrictedPage && !loggedIn) {
+                $location.path('/login');
+            }
+        });
+    }
 
 // create a data service that provides a store and a shopping cart that
 // will be shared by all views (instead of creating fresh ones for each view).
