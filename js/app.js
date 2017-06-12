@@ -16,6 +16,10 @@ var storeApp = angular.module('AngularStore', []).
         templateUrl: 'partials/store.htm',
         controller: storeController 
       }).
+     when('/', {
+        templateUrl: 'partials/home.html',
+        controller: storeController 
+      }).
       when('/products/:productSku', {
         templateUrl: 'partials/product.htm',
         controller: storeController
@@ -38,13 +42,12 @@ var storeApp = angular.module('AngularStore', []).
         redirectTo: '/login'
       });
 }]);
-
-    run.$inject = ['$rootScope', '$location', '$cookies', '$http'];
-    function run($rootScope, $location, $cookies, $http) {
+    run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
+    function run($rootScope, $location, $cookieStore, $http) {
         // keep user logged in after page refresh
-        $rootScope.globals = $cookies.getObject('globals') || {};
+        $rootScope.globals = $cookieStore.get('globals') || {};
         if ($rootScope.globals.currentUser) {
-            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
         }
 
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
